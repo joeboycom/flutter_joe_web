@@ -1,0 +1,19 @@
+name: "任務88: 提供開源貢獻與社群參與紀錄"
+description: "提供開源貢獻與社群參與紀錄"
+searchPattern: "lib/features/opensource/data/"
+rule:
+  all:
+    - type: fileContentMatches
+      pattern: "lib/features/opensource/data/github_data.dart"
+      regex: "username\\s*:\\s*['\"][^'\"]+['\"]"
+      description: "GitHub用戶名已提供"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/opensource/data/repositories_data.dart"
+      regex: "OpenSourceModel\\("
+      minCount: 3
+      description: "至少有3個開源倉庫"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/opensource/data/community_data.dart"
+      regex: "CommunityActivityModel\\("
+      minCount: 2
+      description: "至少有2個社群活動參與記錄" 

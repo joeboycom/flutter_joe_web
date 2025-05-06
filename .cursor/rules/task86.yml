@@ -1,0 +1,22 @@
+name: "任務86: 提供技能矩陣內容"
+description: "提供技能矩陣內容（核心語言、框架與平台、DevOps/CI CD）"
+searchPattern: "lib/features/skills/data/skills_data.dart"
+rule:
+  all:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/skills/data/skills_data.dart"
+      regex: "SkillModel\\("
+      minCount: 12
+      description: "至少有12個技能"
+    - type: fileContentMatches
+      pattern: "lib/features/skills/data/skills_data.dart"
+      regex: "category\\s*:\\s*SkillCategory\\.language"
+      description: "包含核心語言類別"
+    - type: fileContentMatches
+      pattern: "lib/features/skills/data/skills_data.dart"
+      regex: "category\\s*:\\s*SkillCategory\\.framework"
+      description: "包含框架類別"
+    - type: fileContentMatches
+      pattern: "lib/features/skills/data/skills_data.dart"
+      regex: "category\\s*:\\s*SkillCategory\\.devops"
+      description: "包含DevOps類別" 

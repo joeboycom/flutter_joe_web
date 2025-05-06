@@ -1,0 +1,22 @@
+name: "任務85: 提供作品集項目詳細資料"
+description: "提供作品集項目詳細資料（至少5個代表性項目）"
+searchPattern: "lib/features/portfolio/data/projects_data.dart"
+rule:
+  all:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/portfolio/data/projects_data.dart"
+      regex: "ProjectModel\\("
+      minCount: 5
+      description: "至少有5個項目"
+    - type: fileContentMatches
+      pattern: "lib/features/portfolio/data/projects_data.dart"
+      regex: "screenshots\\s*:\\s*\\[(.*?)\\]"
+      description: "項目包含截圖"
+    - type: fileContentMatches
+      pattern: "lib/features/portfolio/data/projects_data.dart"
+      regex: "technologies\\s*:\\s*\\[(.*?)\\]"
+      description: "項目包含技術列表"
+    - type: fileContentMatches
+      pattern: "lib/features/portfolio/data/projects_data.dart"
+      regex: "challenges\\s*:\\s*\\[(.*?)\\]"
+      description: "項目包含挑戰與解決方案" 

@@ -1,0 +1,14 @@
+name: "任務92: 收集推薦語"
+description: "收集推薦語（如需要）"
+searchPattern: "lib/features/home/data/testimonials_data.dart"
+rule:
+  any:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/home/data/testimonials_data.dart"
+      regex: "TestimonialModel\\("
+      minCount: 3
+      description: "至少有3條推薦語"
+    - type: fileContentMatches
+      pattern: "lib/features/home/data/features_config.dart"
+      regex: "showTestimonials\\s*:\\s*false"
+      description: "不需要推薦語，已在配置中關閉" 

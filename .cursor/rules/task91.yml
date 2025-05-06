@@ -1,0 +1,21 @@
+name: "任務91: 準備個人數位履歷內容"
+description: "準備個人數位履歷內容"
+searchPattern: "lib/features/resume/data/resume_data.dart"
+rule:
+  all:
+    - type: fileContentMatches
+      pattern: "lib/features/resume/data/resume_data.dart"
+      regex: "education\\s*:\\s*\\[(.*?)\\]"
+      description: "教育背景已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/resume/data/resume_data.dart"
+      regex: "experience\\s*:\\s*\\[(.*?)\\]"
+      description: "工作經歷已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/resume/data/resume_data.dart"
+      regex: "skills\\s*:\\s*\\[(.*?)\\]"
+      description: "技能列表已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/resume/data/resume_data.dart"
+      regex: "languages\\s*:\\s*\\[(.*?)\\]"
+      description: "語言能力已提供" 

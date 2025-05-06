@@ -1,0 +1,19 @@
+name: "任務84: 列出個人興趣、社群貢獻和座右銘"
+description: "列出個人興趣、社群貢獻和座右銘"
+searchPattern: "lib/features/about/data/interests_data.dart"
+rule:
+  all:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/about/data/interests_data.dart"
+      regex: "Interest\\("
+      minCount: 3
+      description: "至少有3個興趣項目"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/about/data/contributions_data.dart"
+      regex: "Contribution\\("
+      minCount: 1
+      description: "至少有1個社群貢獻"
+    - type: fileContentMatches
+      pattern: "lib/features/about/data/about_data.dart"
+      regex: "motto\\s*:\\s*['\"][^'\"]+['\"]"
+      description: "座右銘已提供" 

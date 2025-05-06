@@ -1,0 +1,13 @@
+name: "任務89: 提供聯絡資訊"
+description: "提供聯絡資訊（郵件、電話、位置）"
+searchPattern: "lib/features/contact/data/contact_data.dart"
+rule:
+  all:
+    - type: fileContentMatches
+      pattern: "lib/features/contact/data/contact_data.dart"
+      regex: "type\\s*:\\s*ContactMethodType\\.email"
+      description: "電子郵件已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/contact/data/contact_data.dart"
+      regex: "type\\s*:\\s*ContactMethodType\\.location"
+      description: "位置已提供" 

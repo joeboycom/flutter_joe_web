@@ -1,0 +1,18 @@
+name: "任務90: 提供社群媒體連結"
+description: "提供社群媒體連結"
+searchPattern: "lib/features/contact/data/social_data.dart"
+rule:
+  all:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/contact/data/social_data.dart"
+      regex: "SocialPlatformModel\\("
+      minCount: 3
+      description: "至少有3個社群媒體連結"
+    - type: fileContentMatches
+      pattern: "lib/features/contact/data/social_data.dart"
+      regex: "type\\s*:\\s*SocialPlatformType\\.github"
+      description: "GitHub連結已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/contact/data/social_data.dart"
+      regex: "type\\s*:\\s*SocialPlatformType\\.linkedin"
+      description: "LinkedIn連結已提供" 

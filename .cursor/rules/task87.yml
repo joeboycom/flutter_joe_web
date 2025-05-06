@@ -1,0 +1,20 @@
+name: "任務87: 提供成就與媒體資料"
+description: "提供成就與媒體資料（獎項/證照、演講、媒體報導、專利/論文）"
+searchPattern: "lib/features/achievements/data/"
+rule:
+  all:
+    - type: fileContentMatchesCount
+      pattern: "lib/features/achievements/data/awards_data.dart"
+      regex: "AchievementModel\\("
+      minCount: 2
+      description: "至少有2個獎項/證照"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/achievements/data/speaking_data.dart"
+      regex: "AchievementModel\\("
+      minCount: 2
+      description: "至少有2個演講記錄"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/achievements/data/media_data.dart"
+      regex: "AchievementModel\\("
+      minCount: 1
+      description: "至少有1個媒體報導" 

@@ -1,0 +1,14 @@
+name: "任務81: 提供個人照片"
+description: "提供個人照片（專業形象照、日常/演講照）"
+searchPattern: "assets/images/profile"
+rule:
+  all:
+    - type: fileExists
+      pattern: "assets/images/profile/profile_photo.jpg"
+      description: "專業形象照已提供"
+    - type: fileExists
+      pattern: "assets/images/profile/daily_photo_1.jpg"
+      description: "日常照片1已提供"
+    - type: fileExists
+      pattern: "assets/images/profile/speaking_photo_1.jpg"
+      description: "演講照片1已提供" 

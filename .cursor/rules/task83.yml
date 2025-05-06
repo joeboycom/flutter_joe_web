@@ -1,0 +1,18 @@
+name: "任務83: 提供專業時間軸內容"
+description: "提供專業時間軸內容（10年重要里程碑）"
+searchPattern: "lib/features/about/data/timeline_data.dart"
+rule:
+  all:
+    - type: fileContentMatches
+      pattern: "lib/features/about/data/timeline_data.dart"
+      regex: "getTimelineItems\\(\\)\\s*{[\\s\\S]*?return\\s+\\[[\\s\\S]*?\\];"
+      description: "時間軸數據已提供"
+    - type: fileContentMatches
+      pattern: "lib/features/about/data/timeline_data.dart"
+      regex: "TimelineItem\\([\\s\\S]*?year:\\s*[\"']?\\d{4}[\"']?"
+      description: "時間軸包含年份資料"
+    - type: fileContentMatchesCount
+      pattern: "lib/features/about/data/timeline_data.dart"
+      regex: "TimelineItem\\("
+      minCount: 5
+      description: "至少有5個時間軸項目" 

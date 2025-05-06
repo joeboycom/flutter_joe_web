@@ -1,0 +1,9 @@
+name: "任務82: 撰寫個人簡介"
+description: "撰寫個人簡介（150-200字第三人稱介紹）"
+searchPattern: "lib/features/about/data/about_data.dart"
+rule:
+  any:
+    - type: fileContentMatches
+      pattern: "lib/features/about/data/about_data.dart"
+      regex: "bio\\s*:\\s*['\"]([^'\"]{150,})['\"]"
+      description: "個人簡介已撰寫（至少150字）" 
