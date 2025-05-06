@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/flutter_joe_web/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Joe Wu's personal portfolio website showcasing 10 years of development work from Android to Flutter apps and web projects.">
+  <meta name="keywords" content="Flutter, Developer, Portfolio, Mobile Apps, Web Development">
+  <meta name="author" content="Joe Wu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Joe Wu - Portfolio">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Joe Wu - Portfolio</title>
+  <link rel="manifest" href="manifest.json">
+  
+  <!-- 添加自定義CSS以增強加載體驗 -->
+  <style>
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+      background-color: #FFFFFF;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    .loading-content {
+      text-align: center;
+    }
+    .spinner {
+      width: 48px;
+      height: 48px;
+      border: 5px solid #3740FF;
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+      margin-bottom: 16px;
+    }
+    @keyframes rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .error-message {
+      color: #ff3333;
+      margin-top: 16px;
+      max-width: 80%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- 添加加載指示器 -->
+  <div id="loading" class="loading">
+    <div class="loading-content">
+      <div class="spinner"></div>
+      <div>Loading Joe's Portfolio...</div>
+      <div id="error-container" class="error-message" style="display: none;"></div>
+    </div>
+  </div>
+
+  <script>
+    // 當Flutter初始化完成後，隱藏加載指示器
+    window.addEventListener('flutter-first-frame', function() {
+      var loading = document.getElementById('loading');
+      if (loading) {
+        loading.style.opacity = 0;
+        setTimeout(function() {
+          loading.remove();
+        }, 500);
+      }
+    });
+    
+    // 設置加載超時
+    setTimeout(function() {
+      var loadingElement = document.getElementById('loading');
+      var errorContainer = document.getElementById('error-container');
+      if (loadingElement && errorContainer) {
+        errorContainer.style.display = 'block';
+        errorContainer.innerHTML = '加載時間過長，請嘗試刷新頁面或使用Chrome瀏覽器。';
+      }
+    }, 30000); // 30秒超時
+  </script>
+  
+  <script src="flutter.js" defer></script>
+  <script>
+    window.addEventListener('load', function(ev) {
+      // 確保 serviceWorkerVersion 變量存在
+      const serviceWorkerVersion = "2257614233";
+      try {
+        // 嘗試獲取在構建時注入的版本
+        if (typeof serviceWorkerVersion === 'undefined') {
+          serviceWorkerVersion = '';
+        }
+      } catch(e) {
+        console.log('Service worker version not found, using default');
+        serviceWorkerVersion = '';
+      }
+      
+      // 下載主入口點
+      _flutter.loader.loadEntrypoint({
+        serviceWorker: {
+          serviceWorkerVersion: serviceWorkerVersion,
+        },
+        onEntrypointLoaded: function(engineInitializer) {
+          engineInitializer.initializeEngine({
+            useColorEmoji: true
+          }).then(function(appRunner) {
+            console.log("Flutter engine initialized successfully");
+            try {
+              appRunner.runApp();
+            } catch(error) {
+              console.error('Flutter app initialization failed:', error);
+              var errorContainer = document.getElementById('error-container');
+              if (errorContainer) {
+                errorContainer.style.display = 'block';
+                errorContainer.innerHTML = '應用加載失敗，請嘗試使用最新版Chrome瀏覽器訪問。<br>錯誤詳情: ' + error;
+              }
+            }
+          }).catch(function(error) {
+            console.error('Flutter 引擎初始化失败: ', error);
+            var errorContainer = document.getElementById('error-container');
+            if (errorContainer) {
+              errorContainer.style.display = 'block';
+              errorContainer.innerHTML = '引擎初始化失敗，請嘗試使用最新版Chrome瀏覽器訪問。<br>錯誤詳情: ' + error;
+            }
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
