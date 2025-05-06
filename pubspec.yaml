@@ -53,7 +53,7 @@ dependencies:
   cached_network_image: ^3.3.1
   flutter_markdown: ^0.6.19
   font_awesome_flutter: ^10.7.0
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   shimmer: ^3.0.0
   
   # Backend & Data
@@ -92,15 +92,14 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/fonts/
-    - .env
   
-  fonts:
-    - family: Inter
-      fonts:
-        - asset: assets/fonts/Inter-Regular.ttf
-        - asset: assets/fonts/Inter-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/Inter-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Inter-Bold.ttf
-          weight: 700
+  # fonts:
+  #   - family: Inter
+  #     fonts:
+  #       - asset: assets/fonts/Inter-Regular.ttf
+  #       - asset: assets/fonts/Inter-Medium.ttf
+  #         weight: 500
+  #       - asset: assets/fonts/Inter-SemiBold.ttf
+  #         weight: 600
+  #       - asset: assets/fonts/Inter-Bold.ttf
+  #         weight: 700

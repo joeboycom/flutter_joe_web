@@ -27,9 +27,9 @@
 
 ### 2. 首頁 (Home)
 - [x] 任務7: 實現 Hero 區域，包含吸睛標語與背景
-- [🔄] 任務8: 開發精選作品輪播 (3-4 個項目)
-- [ ] 任務9: 添加快速 CTA 按鈕 (View Portfolio, Download Resume, Contact Me)
-- [ ] 任務10: 實現頁面過渡動畫效果
+- [x] 任務8: 開發精選作品輪播 (3-4 個項目)
+- [x] 任務9: 添加快速 CTA 按鈕 (View Portfolio, Download Resume, Contact Me)
+- [x] 任務10: 實現頁面過渡動畫效果
 
 ### 3. 關於我 (About)
 - [ ] 任務11: 創建個人簡介區域 (150-200字第三人稱介紹)

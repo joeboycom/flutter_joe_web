@@ -191,7 +191,7 @@ class FeaturedProjectsCarousel extends StatelessWidget {
       // Desktop view: show multiple cards
       return CarouselSlider(
         options: CarouselOptions(
-          height: 400,
+          height: 450,
           viewportFraction: 0.3,
           enlargeCenterPage: true,
           enableInfiniteScroll: true,
@@ -211,7 +211,7 @@ class FeaturedProjectsCarousel extends StatelessWidget {
       // Mobile view: show one card at a time
       return CarouselSlider(
         options: CarouselOptions(
-          height: 400,
+          height: 450,
           enlargeCenterPage: true,
           enableInfiniteScroll: true,
           autoPlay: true,
@@ -284,23 +284,29 @@ class ProjectCard extends StatelessWidget {
                   const SizedBox(height: 16),
                   
                   // Tags
-                  Wrap(
-                    spacing: 8,
-                    children: (project['tags'] as List<String>).map((tag) {
-                      return Chip(
-                        label: Text(
-                          tag,
-                          style: theme.textTheme.bodySmall?.copyWith(
-                            color: theme.colorScheme.primary,
-                            fontWeight: FontWeight.w500,
+                  SizedBox(
+                    height: 32,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: (project['tags'] as List<String>).map((tag) {
+                        return Padding(
+                          padding: const EdgeInsets.only(right: 8.0),
+                          child: Chip(
+                            label: Text(
+                              tag,
+                              style: theme.textTheme.bodySmall?.copyWith(
+                                color: theme.colorScheme.primary,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            backgroundColor: theme.colorScheme.primary.withOpacity(0.1),
+                            side: BorderSide.none,
+                            padding: EdgeInsets.zero,
+                            visualDensity: VisualDensity.compact,
                           ),
-                        ),
-                        backgroundColor: theme.colorScheme.primary.withOpacity(0.1),
-                        side: BorderSide.none,
-                        padding: EdgeInsets.zero,
-                        visualDensity: VisualDensity.compact,
-                      );
-                    }).toList(),
+                        );
+                      }).toList(),
+                    ),
                   ),
                 ],
               ),
