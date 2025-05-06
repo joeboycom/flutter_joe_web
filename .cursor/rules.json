@@ -1,0 +1,8 @@
+{
+  "rules": [
+    {
+      "name": "task-list",
+      "description": "追蹤專案任務完成情況的規則，確保所有任務都被記錄在 TASK.md 文件中並正確更新狀態。"
+    }
+  ]
+} 
