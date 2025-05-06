@@ -45,10 +45,10 @@
 - [x] 任務19: 填充至少 5 個代表性項目的詳細內容
 
 ### 5. 技能矩陣 (Skills)
-- [ ] 任務20: 設計技能展示組件 (可使用圖表或進度條)
-- [ ] 任務21: 實現核心語言板塊 (Dart, Kotlin, Java, Python 等)
-- [ ] 任務22: 實現框架與平台板塊 (Flutter, Jetpack, Bloc/Riverpod, Firebase, GCP)
-- [ ] 任務23: 實現 DevOps/CI CD 板塊 (Melos, GitHub Actions, Docker, Cloud Run)
+- [x] 任務20: 設計技能展示組件 (可使用圖表或進度條)
+- [x] 任務21: 實現核心語言板塊 (Dart, Kotlin, Java, Python 等)
+- [x] 任務22: 實現框架與平台板塊 (Flutter, Jetpack, Bloc/Riverpod, Firebase, GCP)
+- [x] 任務23: 實現 DevOps/CI CD 板塊 (Melos, GitHub Actions, Docker, Cloud Run)
 
 ### 6. 成就與媒體 (Achievements)
 - [ ] 任務24: 實現獎項/證照展示區
