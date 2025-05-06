@@ -1,0 +1,32 @@
+# Cloudflare Pages 部署配置
+
+## 構建設置
+構建命令: flutter build web --release
+構建輸出目錄: build/web
+根目錄: / (根目錄)
+
+## 環境變量
+您可以根據需要添加以下環境變量：
+FLUTTER_VERSION=3.19.0 (或您的Flutter版本)
+
+## 部署分支
+生產分支: main
+預覽分支: *
+
+## 自定義域名配置
+如果您有自己的域名，可以在 Cloudflare Pages 設置中配置：
+1. 進入您的項目
+2. 點擊"自定義域名"
+3. 添加您的域名
+4. 按照 Cloudflare 提供的 DNS 設置指南配置您的域名
+
+## 頁面規則建議
+考慮為您的網站添加以下頁面規則：
+1. 始終使用 HTTPS
+2. 瀏覽器緩存 TTL: 4 小時
+3. 邊緣緩存 TTL: 2 小時
+
+## 注意事項
+1. 確保您的 Flutter web 應用使用了 url_strategy 包來支持幹凈的 URL
+2. index.html 中的 base href 應設置為 "/"
+3. 如果遇到路由問題，可能需要配置重定向規則 

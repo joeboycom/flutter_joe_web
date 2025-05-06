@@ -1,11 +1,11 @@
 {
-    "name": "flutter_joe_web",
-    "short_name": "flutter_joe_web",
+    "name": "Joe Wu - Portfolio",
+    "short_name": "Joe Portfolio",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#0175C2",
-    "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "background_color": "#FFFFFF",
+    "theme_color": "#3740FF",
+    "description": "Joe Wu's personal portfolio website showcasing 10 years of development work.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
@@ -30,6 +30,20 @@
             "sizes": "512x512",
             "type": "image/png",
             "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "icons/screenshot-1.png",
+            "sizes": "1280x720",
+            "type": "image/png",
+            "form_factor": "wide"
+        },
+        {
+            "src": "icons/screenshot-2.png",
+            "sizes": "720x1280",
+            "type": "image/png",
+            "form_factor": "narrow"
         }
     ]
 }
