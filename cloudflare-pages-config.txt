@@ -7,7 +7,7 @@
 
 ## 環境變量
 您可以根據需要添加以下環境變量：
-FLUTTER_VERSION=3.19.0 (或您的Flutter版本)
+FLUTTER_VERSION=3.29.2 (或您的Flutter版本)
 
 ## 部署分支
 生產分支: main
