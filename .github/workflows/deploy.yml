@@ -13,7 +13,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
+          flutter-version: '3.29.2'
           channel: 'stable'
       
       - name: Enable Web
@@ -24,6 +24,12 @@ jobs:
         
       - name: Build Web
         run: flutter build web --release --base-href /flutter_joe_web/
+      
+      - name: Add .nojekyll file
+        run: touch ./build/web/.nojekyll
+      
+      - name: Create 404.html
+        run: cp ./build/web/index.html ./build/web/404.html
       
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
