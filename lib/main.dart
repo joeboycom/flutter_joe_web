@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_joe_web/core/theme/app_theme.dart';
 import 'package:flutter_joe_web/features/home/presentation/pages/home_page.dart';
 import 'package:flutter_joe_web/features/portfolio/presentation/pages/portfolio_page.dart';
+import 'package:flutter_joe_web/features/portfolio/presentation/pages/project_detail_page.dart';
 import 'package:flutter_joe_web/features/about/presentation/pages/about_page.dart';
 import 'package:flutter_joe_web/features/skills/presentation/pages/skills_page.dart';
 import 'package:flutter_joe_web/features/achievements/presentation/pages/achievements_page.dart';
@@ -49,6 +50,15 @@ final _router = GoRouter(
         GoRoute(
           path: '/portfolio',
           builder: (context, state) => const PortfolioPage(),
+          routes: [
+            GoRoute(
+              path: ':projectId',
+              builder: (context, state) {
+                final projectId = state.pathParameters['projectId'] ?? '';
+                return ProjectDetailPage(projectId: projectId);
+              },
+            ),
+          ],
         ),
         GoRoute(
           path: '/about',
